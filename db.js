@@ -1,38 +1,33 @@
 
 // includes
 const http = require('http');
-const { Client } = require('pg');
+const Pool = require('pg').Pool;
+const url = require('url')
 
-// look for the postgres database URL
-const DATABASE_URL = process.env.DATABASE_URL;
+const params = url.parse(process.env.DATABASE_URL);
+const auth = params.auth.split(':');
+
+const config = {
+    user: auth[0],
+    password: auth[1],
+    host: params.hostname,
+    port: params.port,
+    database: params.pathname.split('/')[1],
+    ssl: false
+  };
+
+const client = new Pool(config);
 
 /* Helper function to get DB object */
-function getDBObject() {
-
-    var toReturn = {};
-
-    var client = new Client({
-        connectionString: DATABASE_URL,
-    });
-
-    console.log(DATABASE_URL);
-
-    client.connect()
-    .then(() => client.query('SELECT * FROM hellotable'))
-    .then((result) => {
-        console.log("Found a result.");
-        client.end();
-        toReturn = {'name': '${result.rows[0].name}\n'};
+const getUsers = (request, response) => {
+    client.query('SELECT * FROM users ORDER BY id ASC', (error, results) => {
+      if (error) {
+        throw error
+      }
+      response.status(200).json(results.rows)
     })
-    .catch(() => {
-        console.log("Couldn't read DB.");
-        client.end();
-        toReturn = {'ERROR': 'DB could not be read.'};
-    });
-
-    return toReturn;
-}
+  }
 
 module.exports={
-    getDBObject : getDBObject
+    getUsers
  };

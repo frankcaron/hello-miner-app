@@ -3,7 +3,7 @@ var express = require('express')
 var app = express()
 
 //Helpers
-var DBConnector = require('./db.js')
+var db = require('./db.js')
  
 // look for PORT environment variable, 
 // else look for CLI argument,
@@ -17,12 +17,7 @@ app.get('/', function (req, res) {
 })
 
 //Define request response in root URL (/)
-app.get('/schedules/', function (req, res) {
-    console.log("Responding back with the results...");
-    response = DBConnector.getDBObject();
-    res.json(response);
-    res.end();
-  })
+app.get('/users', db.getUsers)
 
 //Launch listening server on port Heroku-capable port
 app.listen(port, function () {

@@ -4,10 +4,10 @@ var request = require('request');
 var port = process.env.PORT || process.argv[2] || 8080;
 var path = '';
 
-if (process.env.NODE_ENV != 'production') {
-	path = 'http://localhost:' + port;
+if (process.env.NODE_ENV === 'production') {
+	path = 'https://evening-ridge-11930.herokuapp.com/';
 } else {
-    path = 'https://evening-ridge-11930.herokuapp.com/';
+    path = 'http://localhost:' + port;
 }
 
 it('Main page content', function(done) {

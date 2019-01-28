@@ -5,7 +5,10 @@ var app = express()
 // look for PORT environment variable, 
 // else look for CLI argument,
 // else use hard coded value for port 8080
-port = process.env.PORT || process.argv[2] || 8080;
+const port = process.env.PORT || process.argv[2] || 8080;
+
+// look for the postgres database URL
+const { DATABASE_URL } = process.env;
 
 //Define request response in root URL (/)
 app.get('/', function (req, res) {

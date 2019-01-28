@@ -10,6 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/frankcaron/hello-miner-app.git"
   },
+  "engines": {
+    "node": "11.3.0"
+  },
   "author": "frankcaron",
   "license": "ISC",
   "bugs": {

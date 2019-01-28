@@ -7,7 +7,7 @@ var path = '';
 if (process.env.NODE_ENV != 'production') {
 	path = 'http://localhost:' + port;
 } else {
-    path = 'http://localhost:' + port;
+    path = 'https://evening-ridge-11930.herokuapp.com/';
 }
 
 it('Main page content', function(done) {

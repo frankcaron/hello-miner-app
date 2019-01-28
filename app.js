@@ -1,4 +1,4 @@
-/ using the http module
+// using the http module
 let http = require('http'),
  
 // look for PORT environment variable, 

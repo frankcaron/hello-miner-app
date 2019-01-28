@@ -1,7 +1,10 @@
 {
-  "addons": [
-    "heroku-postgresql"
-  ],
+  "addons": [{
+    "plan": "heroku-postgresql:hobby-dev",
+    "options": {
+      "version": "9.5"
+    }
+ }],
   "buildpacks": [
     {
       "url": "heroku/nodejs"
@@ -16,6 +19,7 @@
   },
   "name": "hello-miner-app",
   "scripts": {
+    "postdeploy": "psql $DATABASE_URL -f init.sql"
   },
   "stack": "heroku-18"
 }

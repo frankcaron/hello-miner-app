@@ -1,4 +1,3 @@
-
 // includes
 const http = require('http');
 const Pool = require('pg').Pool;

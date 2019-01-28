@@ -19,7 +19,6 @@
   },
   "name": "hello-miner-app",
   "scripts": {
-    "postdeploy": "psql $DATABASE_URL -f init.sql"
   },
   "stack": "heroku-18"
 }

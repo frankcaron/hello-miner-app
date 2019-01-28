@@ -7,7 +7,7 @@ var path = '';
 if (process.env.NODE_ENV != 'production') {
 	path = 'http://localhost:' + port;
 } else {
-    path = process.env.path;
+    path = 'http://localhost:' + port;
 }
 
 it('Main page content', function(done) {

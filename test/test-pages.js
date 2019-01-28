@@ -1,9 +1,17 @@
 var expect  = require('chai').expect;
 var request = require('request');
 
-//Test Main Page Content
+var port = process.env.PORT || process.argv[2] || 8080;
+var path = '';
+
+if (process.env.NODE_ENV != 'production') {
+	path = 'http://localhost:' + port;
+} else {
+    path = process.env.path;
+}
+
 it('Main page content', function(done) {
-    request('http://localhost:8080' , function(error, response, body) {
+    request(path, function(error, response, body) {
         expect(body).to.equal('hello Frank!');
         done();
     });

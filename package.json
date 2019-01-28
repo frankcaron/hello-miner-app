@@ -18,5 +18,13 @@
   "bugs": {
     "url": "https://github.com/frankcaron/hello-miner-app/issues"
   },
-  "homepage": "https://github.com/frankcaron/hello-miner-app#readme"
+  "homepage": "https://github.com/frankcaron/hello-miner-app#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "request": "^2.88.0"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }

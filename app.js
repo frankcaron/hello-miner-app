@@ -9,7 +9,7 @@ port = process.env.PORT || process.argv[2] || 8080;
 
 //Define request response in root URL (/)
 app.get('/', function (req, res) {
-  res.end('hello Frank!')
+  res.end('Hello Miner!')
 })
 
 //Launch listening server on port Heroku-capable port

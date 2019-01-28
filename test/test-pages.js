@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === 'production') {
 it('Main page content', function() {
     request(path, function(error, response, body) {
         //console.log(error);
-        expect(body).to.equal('hello Frank!');
+        expect(body).to.equal('Hello Miner!');
         done();
     });
 });

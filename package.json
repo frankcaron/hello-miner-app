@@ -11,7 +11,7 @@
     "url": "git+https://github.com/frankcaron/hello-miner-app.git"
   },
   "engines": {
-    "node": "11.3.0"
+    "node": "11.1.0"
   },
   "author": "frankcaron",
   "license": "ISC",

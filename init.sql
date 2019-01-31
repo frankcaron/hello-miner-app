@@ -7,7 +7,9 @@ CREATE TABLE users (
 INSERT INTO users (name, email)
   VALUES ('Frank', 'frank@frankcaron.com');
 
-CREATE TABLE site__c (
+CREATE SCHEMA salesforce;
+
+CREATE TABLE salesforce.site__c (
     site_city__c character varying(255),
     site_country__c character varying(255),
     site_state__c character varying(255),
@@ -28,5 +30,5 @@ CREATE TABLE site__c (
     _hc_err text
 );
 
-INSERT INTO site__c (site_city__c, site_country__c, site_state__c, green_initiatives__c, site_location__latitude__s, site_location__longitude__s, site_description__c, name, id)
+INSERT INTO salesforce.site__c (site_city__c, site_country__c, site_state__c, green_initiatives__c, site_location__latitude__s, site_location__longitude__s, site_description__c, name, id)
   VALUES ('Toronto', 'Canada', 'Ontario', 'Zero carbon footprint, tree recycling', '10.11', '-11.11', 'This is my site', 'Site A', 123456);

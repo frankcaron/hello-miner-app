@@ -29,7 +29,7 @@ const getUsers = (request, response) => {
 
 /* Helper function to return all Sites */
 const getSites = (request, response) => {
-  client.query('SELECT * FROM salesforce.site__c ORDER BY id ASC', (error, results) => {
+  client.query('SELECT * FROM salesforce.Site__c ORDER BY id ASC', (error, results) => {
     if (error) {
       throw error
     }

@@ -17,7 +17,7 @@ const config = {
 
 const client = new Pool(config);
 
-/* Helper function to get DB object */
+/* Helper function to return all users */
 const getUsers = (request, response) => {
     client.query('SELECT * FROM users ORDER BY id ASC', (error, results) => {
       if (error) {
@@ -27,6 +27,17 @@ const getUsers = (request, response) => {
     })
   }
 
+/* Helper function to return all Sites */
+const getSites = (request, response) => {
+  client.query('SELECT * FROM site__c ORDER BY id ASC', (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(200).json(results.rows)
+  })
+}
+
 module.exports={
-    getUsers
+    getUsers,
+    getSites
  };

@@ -1,3 +1,8 @@
+/* Frank Caron
+   fcaron@salesforce.com
+   Sample Heroku Connect app
+*/
+
 // using the http module
 var express = require('express')
 var app = express()

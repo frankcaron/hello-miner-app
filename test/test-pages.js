@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === 'production') {
 it('Main page content', function() {
     request(path, function(error, response, body) {
         //console.log(error);
-        expect(body).to.equal({'response': 'Hello Miner!'});
+        expect(body).to.equal({'context': 'Welcome to the Miner Consumer Site back-end API. Please refer to the HATEOAS links for further calls.','links': [{'name': 'users', 'href': '/users/'},{'name': 'sites', 'href': '/sites/'}] });
         done();
     });
 });

@@ -1,6 +1,7 @@
 // using the http module
 var express = require('express')
 var app = express()
+var aws = require('aws-sdk');
 
 //Helpers
 var db = require('./db.js')
@@ -9,6 +10,10 @@ var db = require('./db.js')
 // else look for CLI argument,
 // else use hard coded value for port 8080
 const port = process.env.PORT || process.argv[2] || 8080;
+
+//S3 for static content
+const S3_BUCKET = process.env.S3_BUCKET;
+aws.config.region = 'us-east-2';
 
 //Define request response in root URL (/)
 app.get('/', function (req, res) {
